@@ -1,0 +1,13 @@
+Index: flatbuffers/include/flatbuffers/base.h
+===================================================================
+--- flatbuffers.orig/include/flatbuffers/base.h
++++ flatbuffers/include/flatbuffers/base.h
+@@ -420,7 +420,7 @@ T ReadScalar(const void *p) {
+ 
+ // See https://github.com/google/flatbuffers/issues/5950
+ 
+-#if (FLATBUFFERS_GCC >= 100000) && (FLATBUFFERS_GCC < 110000)
++#if (FLATBUFFERS_GCC >= 100000) && (FLATBUFFERS_GCC < 120000)
+   #pragma GCC diagnostic push
+   #pragma GCC diagnostic ignored "-Wstringop-overflow"
+ #endif

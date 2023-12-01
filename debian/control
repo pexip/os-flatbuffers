@@ -1,8 +1,9 @@
 Source: flatbuffers
 Priority: optional
 Section: devel
-Maintainer: Maximiliano Curia <maxy@debian.org>
-Uploaders: Nobuhiro Iwamatsu <iwamatsu@debian.org>,
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Maximiliano Curia <maxy@debian.org>
+XSBC-Pexip-Original-Uploaders: Nobuhiro Iwamatsu <iwamatsu@debian.org>,
            Mo Zhou <lumin@debian.org>
 Build-Depends: cmake, debhelper-compat (= 13), dh-python, python3-all, python3-setuptools
 Standards-Version: 4.6.1
@@ -10,6 +11,7 @@ Rules-Requires-Root: no
 Homepage: https://google.github.io/flatbuffers/
 Vcs-Browser: https://salsa.debian.org/debian/flatbuffers
 Vcs-Git: https://salsa.debian.org/debian/flatbuffers.git
+XS-Pexip-Upstream: http://deb.debian.org/debian/ experimental
 
 Package: flatbuffers-compiler
 Architecture: any

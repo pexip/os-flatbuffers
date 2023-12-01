@@ -1,3 +1,9 @@
+flatbuffers (23.5.26+dfsg-1~exp0pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Fri, 01 Dec 2023 09:43:56 +0000
+
 flatbuffers (23.5.26+dfsg-1~exp0) experimental; urgency=medium
 
   * New upstream version 23.5.26+dfsg.

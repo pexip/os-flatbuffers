@@ -1,3 +1,9 @@
+flatbuffers (23.5.26+dfsg-1~exp0pexip3) pexip-bookworm; urgency=medium
+
+  * Rebuild for override changes
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Tue, 19 Dec 2023 17:41:13 +0000
+
 flatbuffers (23.5.26+dfsg-1~exp0pexip2) pexip-bookworm; urgency=medium
 
   * Bookworm build for product distribution

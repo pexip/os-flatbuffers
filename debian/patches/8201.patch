@@ -1,0 +1,39 @@
+From 2be7a56af0cee12f49fe382e3a5485759aa89d58 Mon Sep 17 00:00:00 2001
+From: Mo Zhou <cdluminate@gmail.com>
+Date: Fri, 29 Dec 2023 16:00:44 -0500
+Subject: [PATCH] tests: Fix the expected bin dump of NaN for mips and hppa
+ architectures.
+
+The build fails on mips64el and hppa due to the decimal dump of the
+`testnestedflatbuffer` does not match with the hard coded expectation.
+See the build log as follows:
+
+https://buildd.debian.org/status/fetch.php?pkg=flatbuffers&arch=mips64el&ver=23.5.26%2Bdfsg-1%7Eexp0&stamp=1696723928&raw=0
+
+According to tests/is_quiet_nan.h, the binary value for mips and hppa
+architectures is `0x7FBFFFFFu`, instead of `0x7FC00000u` like amd64.
+Thus, the expected decimal dump should be
+`255 (FF), 255 (FF), 191 (BF), 127 (7F)`
+instead of
+`0 (00), 0 (00), 192 (C0), 127 (7F)`
+in little endian format.
+---
+ tests/reflection_test.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/tests/reflection_test.cpp b/tests/reflection_test.cpp
+index 880f137e1bb..4d07abcc1bb 100644
+--- a/tests/reflection_test.cpp
++++ b/tests/reflection_test.cpp
+@@ -274,7 +274,11 @@ void MiniReflectFlatBuffersTest(uint8_t *flatbuf) {
+       "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "
+       "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "
+       "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 114, 0, 0, 0, 0, 0, 0, 0, "
++#if defined(__mips__) || defined(__hppa__)
++      "8, 0, 0, 0, 255, 255, 191, 127, 13, 0, 0, 0, 78, 101, 115, 116, 101, 100, "
++#else
+       "8, 0, 0, 0, 0, 0, 192, 127, 13, 0, 0, 0, 78, 101, 115, 116, 101, 100, "
++#endif
+       "77, 111, 110, 115, 116, 101, 114, 0, 0, 0 ], "
+       "testarrayofstring2: [ \"jane\", \"mary\" ], "
+       "testarrayofsortedstruct: [ { id: 0, distance: 0 }, "

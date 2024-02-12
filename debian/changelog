@@ -1,3 +1,11 @@
+flatbuffers (23.5.26+dfsg-1~exp1) experimental; urgency=medium
+
+  * Patch code to fix tests on mips64el and hppa.
+  * Specify Breaks+Replaces for the lib package as well. (Closes: #1043244)
+  * Fix ftbfs-source-after-build. (Closes: #1044425)
+
+ -- Mo Zhou <lumin@debian.org>  Fri, 29 Dec 2023 16:38:36 -0500
+
 flatbuffers (23.5.26+dfsg-1~exp0+pexip24u4) pexip-bookworm; urgency=medium
 
   * New versioning scheme

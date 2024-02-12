@@ -8,7 +8,7 @@ export DEB_CPPFLAGS_MAINT_APPEND = -Wno-error=date-time -Wno-error=maybe-uniniti
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
-	dh $@ --with python3 --builddirectory=$(CURDIR)
+	dh $@ --with python3
 
 override_dh_auto_configure:
 	dh_auto_configure -- -DFLATBUFFERS_BUILD_SHAREDLIB=ON
@@ -36,3 +36,7 @@ override_dh_auto_install-indep:
 			--root=$(CURDIR)/debian/python3-flatbuffers; \
 	done
 	find $(CURDIR)/debian/python3-flatbuffers -name 'flatbuffers-*-nspkg.pth' -delete
+
+execute_after_dh_auto_clean:
+	-$(RM) -rf python/build/ python/flatbuffers.egg-info/
+

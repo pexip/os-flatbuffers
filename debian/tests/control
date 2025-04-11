@@ -1,0 +1,22 @@
+Test-Command: cd samples; flatc --python monster.fbs; python3 sample_binary.py
+Depends: @
+
+Test-Command: g++ samples/sample_bfbs.cpp -lflatbuffers -o test; ./test
+Depends: g++, @
+
+Test-Command: g++ samples/sample_binary.cpp -lflatbuffers -o test; ./test
+Depends: g++, @
+
+Test-Command: g++ samples/sample_text.cpp -lflatbuffers -o test; ./test
+Depends: g++, @
+
+Test-Command: pytest-3 -v tests/py_flexbuffers_test.py
+Depends: python3-pytest, @
+
+Test-Command: cd tests; python3 py_test.py 100 100 100 true
+Depends: @
+Restrictions: allow-stderr
+
+Test-Command: cd tests; python3 py_test.py 100 100 100 false
+Depends: @
+Restrictions: allow-stderr

@@ -11,7 +11,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 	dh $@ --with python3
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DFLATBUFFERS_BUILD_SHAREDLIB=ON
+	dh_auto_configure -- -DFLATBUFFERS_BUILD_SHAREDLIB=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON
 
 override_dh_auto_build-arch:
 	dh_auto_build --arch

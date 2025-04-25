@@ -1,3 +1,34 @@
+flatbuffers (23.5.26+dfsg-3) unstable; urgency=medium
+
+  [ Bardia Moshiri ]
+  * debian: build with position independent code
+
+ -- Mo Zhou <lumin@debian.org>  Fri, 11 Apr 2025 09:00:50 -0400
+
+flatbuffers (23.5.26+dfsg-2) unstable; urgency=medium
+
+  * Enable pristine-tar in gbp.conf.
+  * Add several autopkgtest test cases using upstream samples.
+  * Apply wrap-and-sort.
+  * Bump Standards-Version to 4.7.2 (no change needed).
+
+ -- Mo Zhou <lumin@debian.org>  Thu, 27 Feb 2025 22:36:17 -0500
+
+flatbuffers (23.5.26+dfsg-1.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * debian/control: Update the version range of Breaks/Replaces so
+    that all the past versions of libflatbuffers2 are covered.
+    (really closes: #1043102)
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 19 Jul 2024 22:36:52 -0400
+
+flatbuffers (23.5.26+dfsg-1) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Mo Zhou <lumin@debian.org>  Sat, 13 Jul 2024 02:50:50 -0400
+
 flatbuffers (23.5.26+dfsg-1~exp1+pexip24u1) pexip; urgency=medium
 
   * New upstream release

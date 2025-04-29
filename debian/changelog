@@ -1,3 +1,9 @@
+flatbuffers (23.5.26+dfsg-3+pexip25u1) pexip-trixie; urgency=medium
+
+  * Initial trixie build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Tue, 29 Apr 2025 22:31:07 +0100
+
 flatbuffers (23.5.26+dfsg-3) unstable; urgency=medium
 
   [ Bardia Moshiri ]

@@ -1,0 +1,16 @@
+Description: get rid of build failure since setuptools >= 78.X due
+ to feature deprecation. The flatbuffer upstream latest release
+ has already got rid of this line.
+Forwarded: not needed
+Index: flatbuffers/python/setup.py
+===================================================================
+--- flatbuffers.orig/python/setup.py
++++ flatbuffers/python/setup.py
+@@ -18,7 +18,6 @@ setup(
+     name='flatbuffers',
+     version='23.5.26',
+     license='Apache 2.0',
+-    license_files='../LICENSE',
+     author='Derek Bailey',
+     author_email='derekbailey@google.com',
+     url='https://google.github.io/flatbuffers/',

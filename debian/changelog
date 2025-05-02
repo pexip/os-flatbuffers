@@ -1,3 +1,9 @@
+flatbuffers (23.5.26+dfsg-4) unstable; urgency=medium
+
+  * Fix FTBFS due to setuptools (>= 78) feature deprecation. (Closes: #1103212)
+
+ -- Mo Zhou <lumin@debian.org>  Wed, 16 Apr 2025 11:46:28 -0400
+
 flatbuffers (23.5.26+dfsg-3+pexip25u1) pexip-trixie; urgency=medium
 
   * Initial trixie build
